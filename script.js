@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', highlightNavLink);
     
-    // Intersection Observer for scroll animations
+    // Intersection Observer for scroll animations - optimized for faster loading
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
@@ -67,12 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Add animation classes to elements
+    // Add animation classes to elements with reduced delay
     const animateElements = document.querySelectorAll('.section-header, .about-text, .skills-grid, .timeline-item, .experience-card, .project-card, .publication-card, .achievement-card, .contact-item');
     
     animateElements.forEach((el, index) => {
         el.classList.add('fade-in');
-        el.style.transitionDelay = `${index * 0.1}s`;
+        el.style.transitionDelay = `${index * 0.05}s`;
         observer.observe(el);
     });
     
@@ -142,17 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Card hover effects
-    const cards = document.querySelectorAll('.experience-card, .project-card, .publication-card, .achievement-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
+    // Card hover effects - removed to prevent blur issues
     
     // Stagger animation for grid items
     function staggerAnimation(selector, delay = 100) {
@@ -239,31 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     images.forEach(img => imageObserver.observe(img));
     
-    // Add cursor trail effect
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-trail';
-    cursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: rgba(37, 99, 235, 0.3);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease;
-        transform: translate(-50%, -50%);
-    `;
-    document.body.appendChild(cursor);
-    
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-    
-    // Hide cursor trail on mobile
-    if (window.innerWidth <= 768) {
-        cursor.style.display = 'none';
-    }
+    // Cursor trail effect removed for cleaner experience
     
     // Contact form animation (if you add a form later)
     const contactInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');

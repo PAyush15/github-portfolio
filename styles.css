@@ -495,6 +495,10 @@ section {
 .experience-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .card-header {
@@ -564,6 +568,10 @@ section {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .project-header {
@@ -592,6 +600,44 @@ section {
     color: #4b5563;
     line-height: 1.7;
     margin-bottom: 20px;
+}
+
+.project-workflow,
+.project-features {
+    margin-bottom: 20px;
+}
+
+.project-workflow h4,
+.project-features h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.project-workflow ul,
+.project-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-workflow li,
+.project-features li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.project-workflow li::before,
+.project-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .project-tech {
@@ -632,6 +678,10 @@ section {
 .publication-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .publication-type {
@@ -683,6 +733,10 @@ section {
 .achievement-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .achievement-icon {
@@ -863,7 +917,7 @@ section {
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .fade-in.visible {
@@ -874,7 +928,7 @@ section {
 .slide-in-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .slide-in-left.visible {
@@ -885,7 +939,7 @@ section {
 .slide-in-right {
     opacity: 0;
     transform: translateX(50px);
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .slide-in-right.visible {
