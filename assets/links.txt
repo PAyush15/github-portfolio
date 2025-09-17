@@ -1,0 +1,26 @@
+Autonomous Logistics Robot(
+    Demo: https://www.linkedin.com/posts/ayushpatel15_ros2-gazebo-autonomousnavigation-activity-7312392542828834816-uRW0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC39BAwBHpWzd8K0zvgdaAfUDU79KIl7sKw
+    Code: https://github.com/PAyush15/nitrobot-sim
+)
+3D Position Estimation with Deep Learning(
+    Code: https://github.com/PAyush15/Image-based-Pose-Estimation-with-Deep-Learning-for-Needle-Steering
+)
+SwasthyaLogs AI - Medical Record System(
+    Demo: https://youtu.be/VU07vpiK5dM?si=YVgCGXerAfUZ-IGb
+    Code: https://github.com/PAyush15/SwasthyaLogs-AI
+)
+Pipe Climbing Robot(
+    Demo: https://www.youtube.com/watch?v=3fZ0nHpAIPE
+)
+Gesture-based Intelligent Appliance Control(
+    Demo: https://circuitdigest.com/microcontroller-projects/gesture-based-intelligent-appliance-control
+    Code: https://github.com/PAyush15/Track-My-Hand
+)
+Gesture-Controlled Quadruped Robot(
+    Demo: https://youtu.be/kzOi15u5n0c
+    Code: https://github.com/PAyush15/gesture-motion-midog
+)
+Autonomous Delivery Robot(
+    Demo: https://youtu.be/cQoGame0wjs?si=H8P1ezbOLcamr5sb
+    Code: https://github.com/PAyush15/autonomous-indoor-delivery-robot
+)
