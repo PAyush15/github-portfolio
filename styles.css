@@ -215,30 +215,32 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    background: #2563eb;
     color: white;
     border: 2px solid transparent;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    background: #1d4ed8;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    color: #6366f1;
+    border: 2px solid white;
     backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: white;
+    color: #4f46e5;
+    border-color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
 }
 
 /* Profile Card */
@@ -259,14 +261,9 @@ body {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    position: relative;
     overflow: hidden;
     border: 4px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -277,6 +274,13 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .floating-icons {
@@ -349,16 +353,9 @@ section {
     margin: 0 auto;
 }
 
-/* About Section */
+/* About Section - See main definition below */
 .about {
     background-color: #f9fafb;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
 }
 
 .about-text p {
@@ -370,8 +367,9 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 25px;
 }
 
 .skill-category h3 {
@@ -781,11 +779,17 @@ section {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
-    align-items: start;
     margin-top: 50px;
+}
+
+.about-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: start;
 }
 
 .about-sidebar {
@@ -855,10 +859,25 @@ section {
     border-color: #cbd5e1;
 }
 
-@media (max-width: 768px) {
-    .about-content {
+@media (max-width: 1024px) {
+    .about-top {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
     
     .about-sidebar {
@@ -1312,13 +1331,18 @@ section {
         flex-wrap: wrap;
     }
     
-    .about-content {
+    .about-top {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
     }
     
     .timeline-item {
