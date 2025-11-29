@@ -24,3 +24,7 @@ Autonomous Delivery Robot(
     Demo: https://youtu.be/cQoGame0wjs?si=H8P1ezbOLcamr5sb
     Code: https://github.com/PAyush15/autonomous-indoor-delivery-robot
 )
+
+Fashion MNIST Classification with Deep Learning(
+    Code: https://github.com/PAyush15/MNIST-Fashion-Model
+)
