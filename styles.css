@@ -910,12 +910,12 @@ section {
 }
 
 .project-features li::before {
-    content: '✓';
+    content: '•';
     position: absolute;
     left: 0;
-    color: #10b981;
+    color: #1e293b;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 .project-tech {
@@ -1338,6 +1338,9 @@ section {
 .contact {
     background: linear-gradient(135deg, var(--primary-coral) 0%, var(--primary-coral-dark) 100%);
     color: white;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
 }
 
 .contact .section-title,

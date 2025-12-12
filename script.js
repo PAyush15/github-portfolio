@@ -9,6 +9,34 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.classList.toggle('active');
     });
     
+    // Handle smooth scrolling for anchor links (fixes first-click issue)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            // For contact section, scroll to the very bottom of the page
+            if (targetId === '#contact') {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 50);
+            } else {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 50);
+                }
+            }
+        });
+    });
+    
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
@@ -35,13 +63,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightNavLink() {
         let current = '';
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
+        // Check if we're at the bottom of the page - if so, highlight Contact
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+            current = 'contact';
+        } else {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+        }
         
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -68,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Add animation classes to elements with reduced delay
-    const animateElements = document.querySelectorAll('.section-header, .about-text, .skills-grid, .timeline-item, .experience-card, .project-card, .publication-card, .achievement-card, .contact-item');
+    const animateElements = document.querySelectorAll('.section-header, .about-text, .skills-grid, .timeline-item, .experience-card, .project-card, .publication-card, .achievement-card');
     
     animateElements.forEach((el, index) => {
         el.classList.add('fade-in');
