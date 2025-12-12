@@ -1,3 +1,7 @@
+Voice-Controlled Robotic Manipulation with VLM Models(
+    Code: https://github.com/PAyush15/VLM-model-based-robot-manipulation
+)
+
 Autonomous Logistics Robot(
     Demo: https://www.linkedin.com/posts/ayushpatel15_ros2-gazebo-autonomousnavigation-activity-7312392542828834816-uRW0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC39BAwBHpWzd8K0zvgdaAfUDU79KIl7sKw
     Code: https://github.com/PAyush15/nitrobot-sim
